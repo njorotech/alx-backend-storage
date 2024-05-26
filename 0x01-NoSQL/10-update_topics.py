@@ -4,4 +4,4 @@
 
 def update_topics(mongo_collection, name, topics):
     """changes all topics of a school document based on the name"""
-    mongo_collection.update_one({'name': name}, {'$inc': {'topics': topics}}, upsert=True)
+    mongo_collection.update_many({'name': name}, {'$inc': {'topics': topics}})
